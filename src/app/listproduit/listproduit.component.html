@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header">List Produit</div>
+        <div class="card-body">
+            <table class="table" *ngIf="productF!=null;else vide">
+                <thead>
+                    <div class="d-flex">
+                        <input class="form-control me-2" type="search" name="recherche" placeholder="Search" aria-label="Search" [(ngModel)]="VFiltre">
+                        <button class="btn btn-outline-success" type="button" (click)="reset()" >Search</button>
+                    </div>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Quantite</th>
+                            <th><button (click)="Afficher()">{{AF}}</button></th>
+                        </tr> 
+                </thead>
+                <tbody>
+                    <tr *ngFor="let p of productF" [ngStyle]="{color:getColor(p.countInStock)}">
+                    <td>{{p.id}}</td>
+                    <!-- <td><a routerLink="/Product/{{p.id}}">{{p.nom|uppercase}}</a></td> -->
+                    <td><a [routerLink]="['/Product',p.id]">{{p.name |uppercase}}</a></td>
+                    <td>{{p.price| number:'.2-2'}}</td>
+                    <td>{{p.countInStock}}</td>
+                    <td><img  *ngIf="AF=='Masquer'" [src]=p.image width="100px"/></td>
+                   <td>
+                    <button (click)="removeProduct(p.id)" class="btn btn-danger"><i class="bi bi-trash"></i></button>
+                   </td>
+                    </tr>
+                
+                </tbody>
+            </table>
+        <ng-template #vide><h2 style="color: rgb(20, 20, 78)">Le tableau est vide</h2></ng-template>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,4 @@
+<h2>{{prod.nom}}</h2>
+<h2 style="color: red;" *ngIf="prod.quantite!= 0 ; else nonstock">Produit en stock</h2>
+<ng-template  #nonstock><h2 style="color: rgb(0, 255, 13);">hors stock </h2> </ng-template>
+<button (click)="back()" class="btn btn-primary">Retour</button>

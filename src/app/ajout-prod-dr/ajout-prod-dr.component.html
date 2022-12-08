@@ -1,0 +1,26 @@
+<form #formproduct="ngForm" (ngSubmit)="onSubmit(formproduct)">
+    <p>
+        <label for="id">ID </label>
+        <input type="text" id="id" name="id" ngModel>
+      </p>
+    <p>
+      <label for="nom">Nom </label>
+      <input type="text" id="nom" name="nom" ngModel>
+    </p>
+   
+    <p>
+      <label for="quantite">Quantite </label>
+      <input type="text" id="quantite" name="quantite" ngModel>
+    </p>
+   
+    <p>
+      <label for="prix">Prix </label>
+      <input type="text" id="prix" name="prix" ngModel>
+    </p>
+
+   
+    <p>
+      <button type="submit">Submit</button>
+    </p>
+   
+  </form>

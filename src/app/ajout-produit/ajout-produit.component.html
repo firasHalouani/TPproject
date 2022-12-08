@@ -1,0 +1,27 @@
+<form [formGroup]="form" >
+    <tr>
+        <td><label for="id">ID </label></td>
+        <td><input type="text" id="id" name="id" formControlName="id"></td>
+    </tr>
+    <tr>
+      <td><label for="nom">Nom </label></td>
+      <td><input type="text" id="nom" name="nom" formControlName="nom"></td>
+    </tr>
+   
+    <tr>
+      <td><label for="countInStock">Quantite </label></td>
+      <td><input type="text" id="countInStock" name="countInStock" formControlName="countInStock"></td>
+    </tr>
+   
+    <tr>
+      <td><label for="price">Prix </label></td>
+      <td><input type="text" id="price" name="price" formControlName="price"></td>
+    </tr>
+
+   
+    <tr>
+      <td><button type="submit" (click)="onSubmit()">Ajouter</button></td>
+      <td><button type="submit" (click)="reset()">cancel</button></td>
+    </tr>
+   
+  </form>
